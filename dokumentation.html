@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Dokumentation av API</h1>
+        <h2>Routes</h2>
+    
+        <ul>
+            <li><em><span class="get">GET</span> localhost:3000/members</em> - returnerar alla användare.</li> <br>
+            <li>
+                <em><span class="get">GET</span> localhost:3000/members/{id}</em> - returnerar en användare med angivet id eller status 404 om användaren saknas.
+            </li> <br>
+            <li>
+                <em><span class="post">POST</span> localhost:3000/addMembers</em> - skapar en ny user med hashat lösenord, accepterar JSON objekt på formatet {"username": "", "password": "", "name": "", "email": ""}. <br>
+                Alla användarobjektet är obligatoriska och ska vara korrekt fyllda. Username ska vara unik och får inte vara i användning. 
+            </li> <br>
+            <li>
+                <em><span class="put">PUT</span> localhost:3000/members/:id</em> - uppdaterar user med angivet id, dvs user som redan finns i databasen med möjlighet att välja ett eller flera användarobjekt. <br> 
+                Accepterar JSON-objekt på formatet {"username": "", name": "", "password": "", "email": ""}.
+            </li> <br>
+            <li>
+                <em><span class="post">POST </span> localhost:3000/login</em> - inloggning, accepterar JSON-objekt på formatet {"username": "", "password": ""}. <br> 
+                Returnerar inte information om användaren i klartext utan en tidsbegränsad JWT (token).
+            </li> <br>
+            <li>
+                <em><span class="delete">DELETE </span> localhost:3000/deleteMembers/{id}</em> - raderar en user med angiven id. exempel: ( localhost:3000/deleteMembers/25 )
+            </li>
+    
+        </ul>
+    
+    
+        <footer>
+            <p>&copy; 2023 Ismail M. Adam</p>
+        </footer>
+    </div>
+    
+</body>
+</html>
